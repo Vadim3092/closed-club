@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    container_name: lms-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lms
+    ports:
+      - "5433:5432"
+    volumes:
+      - lms-pgdata:/var/lib/postgresql/data
+
+volumes:
+  lms-pgdata:
+  
